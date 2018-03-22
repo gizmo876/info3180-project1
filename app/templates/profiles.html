@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Profiles{% endblock %}
+
+{% block css %}
+
+<link href="{{ url_for('static', filename='css/profiles.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+{% include 'flash_messages.html' %}
+
+ <h1>Profiles</h1>
+    {% for profile in profiles %}
+    <div class="profile">
+        <hr class="top"/>
+        
+        <ul>
+            <img id= 'image' src ="{{ url_for('static', filename='uploads/'+profile[0]) }}"></img>
+            <div class="info">
+
+            <span class="name">{{ profile[1] }} {{ profile[2] }}</span><br>
+            {{ profile[3] }} <br>
+            {{ profile[4] }}
+            <div class="view_btn">
+            <form>
+            <input id ="view_button" class='btn btn-primary' type="button" value="View Profile" onclick="window.location.href='/profile/{{ profile[5] }}'" />
+            </form> 
+            </div>
+            </div>
+            
+        	</div>
+        </ul>
+        {% endfor %}
+
+{% endblock %}

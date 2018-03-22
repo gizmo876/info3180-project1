@@ -6,7 +6,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'KYZX234'
 app.config['UPLOAD_FOLDER'] = "./app/static/uploads"
 
-app.config['SQLALCHEMY_DATABASE_URI'] =  "postgresql://project1:testpass@localhost/formdatabase"
+#app.config['SQLALCHEMY_DATABASE_URI'] =  "postgresql://project1:testpass@localhost/formdatabase"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rrzkfijmhwpzxa:40a1f26aa7a8da35d1f89892156589da23b0435ac8e48741a906620c427dfd2a@ec2-54-243-210-70.compute-1.amazonaws.com:5432/decagt77j353d'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # added just to suppress a warning
 
 db = SQLAlchemy(app)

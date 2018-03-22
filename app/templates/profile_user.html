@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+<link href="{{ url_for('static', filename='css/profile_user.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+
+<div class="profile">
+
+    <img id="profile_img" src="{{ url_for('static', filename='uploads/'+user.photo) }}"></img>
+
+
+
+    <div class="info">
+
+        <h4>{{ user.firstname}} {{ user.lastname }}</h4>
+
+        <span id="line"><img id="icon" src="{{url_for('static', filename='css/mail.jpg') }}"></img>  {{ user.email}} </span><br/>
+
+        <span id="line"><img id="icon" src="{{url_for('static', filename='css/locate.jpg') }}"></img>  {{ user.location}}</span><br/>
+
+        <span id="line"><img id="icon" src="{{url_for('static', filename='css/calender.jpg') }}"></img> Joined on {{ user.created_on }}</span> <br/><br/>
+
+        
+
+        
+
+    </div><br/>
+
+    <br/>
+
+    <div class ="bio">
+
+    <h5>About Me</h5>
+
+        <p>{{ user.biography }}</p>
+
+         
+
+    <div class="button"><button id="btn1">Send Message </button>
+
+    <button id="btn2">Follow </button></div> 
+
+    
+
+    </div>
+
+</div>
+
+
+{% endblock %}
